@@ -1,16 +1,18 @@
 ================================
-1.17 从字典中提取子集
+1.17 从字典中提取子集 Extracting a Subset of a Dictionary
 ================================
 
 ----------
 问题
 ----------
 你想构造一个字典，它是另外一个字典的子集。
+You want to make a dictionary that is a subset of another dictionary.
 
 ----------
 解决方案
 ----------
 最简单的方式是使用字典推导。比如：
+This is easily accomplished using a dictionary comprehension. 
 
 .. code-block:: python
 
@@ -31,6 +33,8 @@
 讨论
 ----------
 大多数情况下字典推导能做到的，通过创建一个元组序列然后把它传给 ``dict()`` 函数也能实现。比如：
+Much of what can be accomplished with a dictionary comprehension might also be done
+by creating a sequence of tuples and passing them to the dict() function. 
 
 .. code-block:: python
 

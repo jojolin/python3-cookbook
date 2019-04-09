@@ -1,16 +1,19 @@
 ================================
-1.5 实现一个优先级队列
+1.5 实现一个优先级队列 Implementing a Priority Queue
 ================================
 
 ----------
 问题
 ----------
 怎样实现一个按优先级排序的队列？ 并且在这个队列上面每次 pop 操作总是返回优先级最高的那个元素
+You want to implement a queue that sorts items by a given priority and always returns
+the item with the highest priority on each pop operation
 
 ----------
 解决方案
 ----------
 下面的类利用 ``heapq`` 模块实现了一个简单的优先级队列：
+The following class uses the heapq module to implement a simple priority queue
 
 .. code-block:: python
 

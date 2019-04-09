@@ -1,17 +1,22 @@
 ================================
-1.3 保留最后 N 个元素
+1.3 保留最后 N 个元素 Keeping the Last N Items
 ================================
 
 ----------
 问题
 ----------
 在迭代操作或者其他操作的时候，怎样只保留最后有限几个元素的历史记录？
+You want to keep a limited history of the last few items seen during iteration or during
+some other kind of processing
 
 ----------
 解决方案
 ----------
 保留有限历史记录正是 ``collections.deque`` 大显身手的时候。比如，下面的代码在多行上面做简单的文本匹配，
 并返回匹配所在行的最后N行：
+Keeping a limited history is a perfect use for a collections.deque. For example, the
+following code performs a simple text match on a sequence of lines and yields the
+matching line along with the previous N lines of context when found
 
 .. code-block:: python
 
@@ -39,9 +44,14 @@
 ----------
 我们在写查询元素的代码时，通常会使用包含 ``yield`` 表达式的生成器函数，也就是我们上面示例代码中的那样。
 这样可以将搜索过程代码和使用搜索结果代码解耦。如果你还不清楚什么是生成器，请参看 4.3 节。
+When writing code to search for items, it is common to use a generator function in‐
+volving yield, as shown in this recipe’s solution. This decouples the process of searching
+from the code that uses the results. If you’re new to generators, see Recipe 4.3
 
 使用 ``deque(maxlen=N)`` 构造函数会新建一个固定大小的队列。当新的元素加入并且这个队列已满的时候，
 最老的元素会自动被移除掉。
+Using deque(maxlen=N) creates a fixed-sized queue. When new items are added and
+the queue is full, the oldest item is automatically removed
 
 代码示例：
 

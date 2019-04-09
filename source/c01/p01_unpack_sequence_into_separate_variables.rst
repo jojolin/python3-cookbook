@@ -1,17 +1,22 @@
 ===============================
-1.1 解压序列赋值给多个变量
+1.1 解压序列赋值给多个变量 Unpacking a Sequence into Separate Variables
 ===============================
 
 ----------
 问题
 ----------
 现在有一个包含 N 个元素的元组或者是序列，怎样将它里面的值解压后同时赋值给 N 个变量？
+You have an N-element tuple or sequence that you would like to unpack into a collection
+of N variables.
 
 ----------
 解决方案
 ----------
 任何的序列（或者是可迭代对象）可以通过一个简单的赋值语句解压并赋值给多个变量。
 唯一的前提就是变量的数量必须跟序列元素的数量是一样的。
+Any sequence (or iterable) can be unpacked into variables using a simple assignment
+operation. The only requirement is that the number of variables and structure match
+the sequence
 
 代码示例：
 
@@ -59,6 +64,8 @@
 ----------
 实际上，这种解压赋值可以用在任何可迭代对象上面，而不仅仅是列表或者元组。
 包括字符串，文件对象，迭代器和生成器。
+Unpacking actually works with any object that happens to be iterable, not just tuples or
+lists. This includes strings, files, iterators, and generators
 
 代码示例：
 
@@ -76,6 +83,8 @@
 
 有时候，你可能只想解压一部分，丢弃其他的值。对于这种情况 Python 并没有提供特殊的语法。
 但是你可以使用任意变量名去占位，到时候丢掉这些变量就行了。
+When unpacking, you may sometimes want to discard certain values. Python has no
+special syntax for this, but you can often just pick a throwaway variable name for it
 
 代码示例：
 

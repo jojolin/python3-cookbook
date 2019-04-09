@@ -1,16 +1,19 @@
 =============================
-1.9 查找两字典的相同点
+1.9 查找两字典的相同点 Finding Commonalities in Two Dictionaries
 =============================
 
 ----------
 问题
 ----------
 怎样在两个字典中寻寻找相同点（比如相同的键、相同的值等等）？
+You have two dictionaries and want to find out what they might have in common (same
+keys, same values, etc.).
 
 ----------
 解决方案
 ----------
 考虑下面两个字典：
+Consider two dictionaries
 
 .. code-block:: python
 
@@ -61,3 +64,17 @@
 尽管字典的 ``values()`` 方法也是类似，但是它并不支持这里介绍的集合操作。
 某种程度上是因为值视图不能保证所有的值互不相同，这样会导致某些集合操作会出现问题。
 不过，如果你硬要在值上面执行这些集合操作的话，你可以先将值集合转换成 set，然后再执行集合运算就行了。
+A dictionary is a mapping between a set of keys and values. The keys() method of a
+dictionary returns a keys-view object that exposes the keys. A little-known feature of
+keys views is that they also support common set operations such as unions, intersections,
+and differences. Thus, if you need to perform common set operations with dictionary
+keys, you can often just use the keys-view objects directly without first converting them
+into a set.
+The items() method of a dictionary returns an items-view object consisting of (key,
+value) pairs. This object supports similar set operations and can be used to perform
+operations such as finding out which key-value pairs two dictionaries have in common.
+Although similar, the values() method of a dictionary does not support the set oper‐
+ations described in this recipe. In part, this is due to the fact that unlike keys, the items
+contained in a values view aren’t guaranteed to be unique. This alone makes certain set
+operations of questionable utility. However, if you must perform such calculations, they
+can be accomplished by simply converting the values to a set first

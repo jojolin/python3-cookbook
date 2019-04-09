@@ -1,5 +1,5 @@
 ============================
-1.20 合并多个字典或映射
+1.20 合并多个字典或映射 Combining Multiple Mappings into a Single Mapping
 ============================
 
 ----------
@@ -7,6 +7,9 @@
 ----------
 现在有多个字典或者映射，你想将它们从逻辑上合并为一个单一的映射后执行某些操作，
 比如查找值或者检查某些键是否存在。
+You have multiple dictionaries or mappings that you want to logically combine into a
+single mapping to perform certain operations, such as looking up values or checking
+for the existence of keys.
 
 ----------
 解决方案
@@ -35,6 +38,10 @@
 一个 ``ChainMap`` 接受多个字典并将它们在逻辑上变为一个字典。
 然后，这些字典并不是真的合并在一起了， ``ChainMap`` 类只是在内部创建了一个容纳这些字典的列表
 并重新定义了一些常见的字典操作来遍历这个列表。大部分字典操作都是可以正常使用的，比如：
+A ChainMap takes multiple mappings and makes them logically appear as one. However,
+the mappings are not literally merged together. Instead, a ChainMap simply keeps a list
+of the underlying mappings and redefines common dictionary operations to scan the
+list. Most operations will work.
 
 .. code-block:: python
 

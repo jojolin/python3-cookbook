@@ -1,16 +1,19 @@
 ================================
-1.4 查找最大或最小的 N 个元素
+1.4 查找最大或最小的 N 个元素 Finding the Largest or Smallest N Items
 ================================
 
 ----------
 问题
 ----------
 怎样从一个集合中获得最大或者最小的 N 个元素列表？
+You want to make a list of the largest or smallest N items in a collection
 
 ----------
 解决方案
 ----------
 heapq 模块有两个函数：``nlargest()`` 和 ``nsmallest()`` 可以完美解决这个问题。
+The heapq module has two functions—nlargest() and nsmallest()—that do exactly
+what you want
 
 .. code-block:: python
 
@@ -41,6 +44,10 @@ heapq 模块有两个函数：``nlargest()`` 和 ``nsmallest()`` 可以完美解
 ----------
 如果你想在一个集合中查找最小或最大的 N 个元素，并且 N 小于集合元素数量，那么这些函数提供了很好的性能。
 因为在底层实现里面，首先会先将集合数据进行堆排序后放入一个列表中：
+If you are looking for the N smallest or largest items and N is small compared to the
+overall size of the collection, these functions provide superior performance. Underneath
+the covers, they work by first converting the data into a list where items are ordered as
+a heap
 
 .. code-block:: python
 

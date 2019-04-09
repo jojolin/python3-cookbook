@@ -1,17 +1,22 @@
 ====================================
-1.13 通过某个关键字排序一个字典列表
+1.13 通过某个关键字排序一个字典列表 Sorting a List of Dictionaries by a Common Key
 ====================================
 
 ----------
 问题
 ----------
 你有一个字典列表，你想根据某个或某几个字典字段来排序这个列表。
+You have a list of dictionaries and you would like to sort the entries according to one
+or more of the dictionary values.
 
 ----------
 解决方案
 ----------
 通过使用 ``operator`` 模块的 ``itemgetter`` 函数，可以非常容易的排序这样的数据结构。
 假设你从数据库中检索出来网站会员信息列表，并且以下列的数据结构返回：
+Sorting this type of structure is easy using the operator module’s itemgetter function.
+Let’s say you’ve queried a database table to get a listing of the members on your website,
+and you receive the following data structure in return:
 
 .. code-block:: python
 
@@ -73,6 +78,17 @@
 如果你传入多个索引参数给 ``itemgetter()`` ，它生成的 ``callable`` 对象会返回一个包含所有元素值的元组，
 并且 ``sorted()`` 函数会根据这个元组中元素顺序去排序。
 但你想要同时在几个字段上面进行排序（比如通过姓和名来排序，也就是例子中的那样）的时候这种方法是很有用的。
+In this example, rows is passed to the built-in sorted() function, which accepts a key‐
+word argument key. This argument is expected to be a callable that accepts a single item
+from rows as input and returns a value that will be used as the basis for sorting. The
+itemgetter() function creates just such a callable.
+The operator.itemgetter() function takes as arguments the lookup indices used to
+extract the desired values from the records in rows. It can be a dictionary key name, a
+numeric list element, or any value that can be fed to an object’s __getitem__() method.
+If you give multiple indices to itemgetter(), the callable it produces will return a tuple
+with all of the elements in it, and sorted() will order the output according to the sorted
+order of the tuples. This can be useful if you want to simultaneously sort on multiple
+fields (such as last and first name, as shown in the example).
 
 ``itemgetter()`` 有时候也可以用 ``lambda`` 表达式代替，比如：
 

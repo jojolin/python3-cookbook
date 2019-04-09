@@ -1,11 +1,13 @@
 ================================
-1.14 排序不支持原生比较的对象
+1.14 排序不支持原生比较的对象 Sorting Objects Without Native Comparison Support
 ================================
 
 ----------
 问题
 ----------
 你想排序类型相同的对象，但是他们不支持原生的比较操作。
+You want to sort objects of the same class, but they don’t natively support comparison
+operations.
 
 ----------
 解决方案
@@ -14,6 +16,11 @@
 这个 ``callable`` 对象对每个传入的对象返回一个值，这个值会被 ``sorted`` 用来排序这些对象。
 比如，如果你在应用程序里面有一个 ``User`` 实例序列，并且你希望通过他们的 ``user_id`` 属性进行排序，
 你可以提供一个以 ``User`` 实例作为输入并输出对应 ``user_id`` 值的 ``callable`` 对象。比如：
+The built-in sorted() function takes a key argument that can be passed a callable that
+will return some value in the object that sorted will use to compare the objects. For
+example, if you have a sequence of User instances in your application, and you want to
+sort them by their user_id attribute, you would supply a callable that takes a User
+instance as input and returns the user_id. 
 
 .. code-block:: python
 
@@ -46,6 +53,12 @@
 但是， ``attrgetter()`` 函数通常会运行的快点，并且还能同时允许多个字段进行比较。
 这个跟 ``operator.itemgetter()`` 函数作用于字典类型很类似（参考1.13小节）。
 例如，如果 ``User`` 实例还有一个 ``first_name`` 和 ``last_name`` 属性，那么可以向下面这样排序：
+The choice of whether or not to use lambda or attrgetter() may be one of personal
+preference. However, attrgetter() is often a tad bit faster and also has the added
+feature of allowing multiple fields to be extracted simultaneously. This is analogous to
+the use of operator.itemgetter() for dictionaries (see Recipe 1.13). For example, if
+User instances also had a first_name and last_name attribute, you could perform a
+sort like this:
 
 .. code-block:: python
 

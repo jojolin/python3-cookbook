@@ -1,17 +1,21 @@
 ================================
-1.12 序列中出现次数最多的元素
+1.12 序列中出现次数最多的元素 Determining the Most Frequently Occurring Items in a Sequence
 ================================
 
 ----------
 问题
 ----------
 怎样找出一个序列中出现次数最多的元素呢？
+You have a sequence of items, and you’d like to determine the most frequently occurring
+items in the sequence.
 
 ----------
 解决方案
 ----------
 ``collections.Counter`` 类就是专门为这类问题而设计的，
 它甚至有一个有用的 ``most_common()`` 方法直接给了你答案。
+The collections.Counter class is designed for just such a problem. It even comes with
+a handy most_common() method that will give you the answer.
 
 为了演示，先假设你有一个单词列表并且想找出哪个单词出现频率最高。你可以这样做：
 
@@ -35,6 +39,8 @@
 ----------
 作为输入， ``Counter`` 对象可以接受任意的由可哈希（``hashable``）元素构成的序列对象。
 在底层实现上，一个 ``Counter`` 对象就是一个字典，将元素映射到它出现的次数上。比如：
+As input, Counter objects can be fed any sequence of hashable input items. Under the
+covers, a Counter is a dictionary that maps the items to the number of occurrences. 
 
 .. code-block:: python
 

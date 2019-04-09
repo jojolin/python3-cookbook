@@ -1,17 +1,21 @@
 ================================
-1.15 通过某个字段将记录分组
+1.15 通过某个字段将记录分组 Grouping Records Together Based on a Field
 ================================
 
 ----------
 问题
 ----------
 你有一个字典或者实例的序列，然后你想根据某个特定的字段比如 ``date`` 来分组迭代访问。
+You have a sequence of dictionaries or instances and you want to iterate over the data
+in groups based on the value of a particular field, such as date.
 
 ----------
 解决方案
 ----------
 ``itertools.groupby()`` 函数对于这样的数据分组操作非常实用。
 为了演示，假设你已经有了下列的字典列表：
+The itertools.groupby() function is particularly useful for grouping data together
+like this. To illustrate, suppose you have the following list of dictionaries:
 
 .. code-block:: python
 
@@ -71,6 +75,17 @@
 
 如果你仅仅只是想根据 ``date`` 字段将数据分组到一个大的数据结构中去，并且允许随机访问，
 那么你最好使用 ``defaultdict()`` 来构建一个多值字典，关于多值字典已经在 1.6 小节有过详细的介绍。比如：
+
+The groupby() function works by scanning a sequence and finding sequential “runs”
+of identical values (or values returned by the given key function). On each iteration, it
+returns the value along with an iterator that produces all of the items in a group with
+the same value.
+An important preliminary step is sorting the data according to the field of interest. Since
+groupby() only examines consecutive items, failing to sort first won’t group the records
+as you want.
+If your goal is to simply group the data together by dates into a large data structure that
+allows random access, you may have better luck using defaultdict() to build a
+multidict, as described in Recipe 1.6. 
 
 .. code-block:: python
 

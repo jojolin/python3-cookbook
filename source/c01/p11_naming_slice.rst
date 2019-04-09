@@ -1,16 +1,20 @@
 ================================
-1.11 命名切片
+1.11 命名切片 Naming a Slice
 ================================
 
 ----------
 问题
 ----------
 如果你的程序包含了大量无法直视的硬编码切片，并且你想清理一下代码。
+Your program has become an unreadable mess of hardcoded slice indices and you want
+to clean it up
 
 ----------
 解决方案
 ----------
 假定你要从一个记录（比如文件或其他类似格式）中的某些固定位置提取字段：
+Suppose you have some code that is pulling specific data fields out of a record string
+with fixed fields (e.g., from a flat file or similar format):
 
 .. code-block:: python
 
@@ -34,6 +38,10 @@
 一般来讲，代码中如果出现大量的硬编码下标会使得代码的可读性和可维护性大大降低。
 比如，如果你回过来看看一年前你写的代码，你会摸着脑袋想那时候自己到底想干嘛啊。
 这是一个很简单的解决方案，它让你更加清晰的表达代码的目的。
+As a general rule, writing code with a lot of hardcoded index values leads to a readability
+and maintenance mess. For example, if you come back to the code a year later, you’ll
+look at it and wonder what you were thinking when you wrote it. The solution shown
+is simply a way of more clearly stating what your code is actually doing.
 
 内置的 ``slice()`` 函数创建了一个切片对象。所有使用切片的地方都可以使用切片对象。比如：
 

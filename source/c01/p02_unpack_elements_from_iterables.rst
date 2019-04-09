@@ -1,5 +1,5 @@
 ================================
-1.2 解压可迭代对象赋值给多个变量
+1.2 解压可迭代对象赋值给多个变量 Unpacking Elements from Iterables of Arbitrary
 ================================
 
 ----------
@@ -7,6 +7,8 @@
 ----------
 如果一个可迭代对象的元素个数超过变量个数时，会抛出一个 ``ValueError`` 。
 那么怎样才能从这个可迭代对象中解压出 N 个元素出来？
+You need to unpack N elements from an iterable, but the iterable may be longer than N
+elements, causing a “too many values to unpack” exception
 
 ----------
 解决方案
@@ -14,6 +16,11 @@
 Python 的星号表达式可以用来解决这个问题。比如，你在学习一门课程，在学期末的时候，
 你想统计下家庭作业的平均成绩，但是排除掉第一个和最后一个分数。如果只有四个分数，你可能就直接去简单的手动赋值，
 但如果有 24 个呢？这时候星号表达式就派上用场了：
+Python “star expressions” can be used to address this problem. For example, suppose
+you run a course and decide at the end of the semester that you’re going to drop the first
+and last homework grades, and only average the rest of them. If there are only four
+assignments, maybe you simply unpack all four, but what if there are 24? A star expres‐
+sion makes it easy
 
 .. code-block:: python
 

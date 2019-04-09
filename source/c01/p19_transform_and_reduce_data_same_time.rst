@@ -1,5 +1,5 @@
 ================================
-1.19 转换并同时计算数据
+1.19 转换并同时计算数据 Transforming and Reducing Data at the Same Time
 ================================
 
 ----------
@@ -7,12 +7,17 @@
 ----------
 你需要在数据序列上执行聚集函数（比如 ``sum()`` , ``min()`` , ``max()`` ），
 但是首先你需要先转换或者过滤数据
+You need to execute a reduction function (e.g., sum(), min(), max()), but first need to
+transform or filter the data.
 
 ----------
 解决方案
 ----------
 一个非常优雅的方式去结合数据计算与转换就是使用一个生成器表达式参数。
 比如，如果你想计算平方和，可以像下面这样做：
+A very elegant way to combine a data reduction and a transformation is to use a
+generator-expression argument. For example, if you want to calculate the sum of
+squares, do the following:
 
 .. code-block:: python
 
@@ -47,6 +52,9 @@
 ----------
 上面的示例向你演示了当生成器表达式作为一个单独参数传递给函数时候的巧妙语法（你并不需要多加一个括号）。
 比如，下面这些语句是等效的：
+The solution shows a subtle syntactic aspect of generator expressions when supplied as
+the single argument to a function (i.e., you don’t need repeated parentheses). For ex‐
+ample, these statements are the same:
 
 .. code-block:: python
 

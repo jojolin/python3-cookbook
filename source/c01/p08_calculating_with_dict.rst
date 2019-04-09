@@ -1,11 +1,13 @@
 ================================
-1.8 字典的运算
+1.8 字典的运算 Calculating with Dictionaries
 ================================
 
 ----------
 问题
 ----------
 怎样在数据字典中执行一些计算操作（比如求最小值、最大值、排序等等）？
+You want to perform various calculations (e.g., minimum value, maximum value, sort‐
+ing, etc.) on a dictionary of data
 
 ----------
 解决方案
@@ -24,6 +26,9 @@
 
 为了对字典值执行计算操作，通常需要使用 ``zip()`` 函数先将键和值反转过来。
 比如，下面是查找最小和最大股票价格和股票值的代码：
+In order to perform useful calculations on the dictionary contents, it is often useful to
+invert the keys and values of the dictionary using zip().For example, here is how to
+find the minimum and maximum price and stock name
 
 .. code-block:: python
 

@@ -1,16 +1,20 @@
 =============================
-1.10 删除序列相同元素并保持顺序
+1.10 删除序列相同元素并保持顺序 Removing Duplicates from a Sequence while Maintaining Order
 =============================
 
 ----------
 问题
 ----------
 怎样在一个序列上面保持元素顺序的同时消除重复的值？
+You want to eliminate the duplicate values in a sequence, but preserve the order of the
+remaining items
 
 ----------
 解决方案
 ----------
 如果序列上的值都是 ``hashable`` 类型，那么可以很简单的利用集合或者生成器来解决这个问题。比如：
+If the values in the sequence are hashable, the problem can be easily solved using a set
+and a generator
 
 .. code-block:: python
 
@@ -58,6 +62,7 @@
 讨论
 ----------
 如果你仅仅就是想消除重复元素，通常可以简单的构造一个集合。比如：
+If all you want to do is eliminate duplicates, it is often easy enough to make a set
 
 .. code-block:: python
 

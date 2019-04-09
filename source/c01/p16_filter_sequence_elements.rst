@@ -1,16 +1,19 @@
 ================================
-1.16 过滤序列元素
+1.16 过滤序列元素 Filtering Sequence Elements
 ================================
 
 ----------
 问题
 ----------
 你有一个数据序列，想利用一些规则从中提取出需要的值或者是缩短序列
+You have data inside of a sequence, and need to extract values or reduce the sequence
+using some criteria.
 
 ----------
 解决方案
 ----------
 最简单的过滤序列元素的方法就是使用列表推导。比如：
+The easiest way to filter sequence data is often to use a list comprehension. 
 
 .. code-block:: python
 
@@ -62,6 +65,9 @@
 ----------
 列表推导和生成器表达式通常情况下是过滤数据最简单的方式。
 其实它们还能在过滤的时候转换数据。比如：
+List comprehensions and generator expressions are often the easiest and most straight‐
+forward ways to filter simple data. They also have the added power to transform the
+data at the same time. 
 
 .. code-block:: python
 
